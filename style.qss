@@ -1,0 +1,379 @@
+/* === ГЛОБАЛЬНЫЙ ФОН === */
+#background {
+    border-image: url("mount.jpg") 0 0 0 0 stretch stretch;
+}
+
+#centralwidget {
+    border-image: url("cloud.jpg") 0 0 0 0 stretch stretch;
+    background-position: center;
+    background-size: cover;
+}
+
+#centralwidget::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(30, 60, 90, 0.20); /* мягкий сине‑серый фильтр */
+    z-index: -1;
+}
+
+
+#text1, #text2 {
+    color: white;
+}
+
+#labelImage {
+    color: white;
+}
+
+QLineEdit, QTextEdit {
+    background: rgba(210, 230, 255, 0.95); /* светло‑голубой, хорошо видимый */
+    border-radius: 14px;
+    padding: 10px 14px;
+    font-size: 18px;
+    color: #1E1F2E;
+
+    /* лёгкая внутренняя подсветка */
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.8) inset,
+        0 4px 14px rgba(0,0,0,0.12);
+
+    border: 1px solid rgba(150, 170, 255, 0.55); /* голубо‑фиолетовая рамка */
+}
+
+/* Hover — ещё чуть светлее */
+QLineEdit:hover, QTextEdit:hover {
+    background: rgba(220, 240, 255, 0.98);
+}
+
+/* Focus — акцент */
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #9BA8FF;
+    background: rgba(230, 245, 255, 1);
+    box-shadow:
+        0 0 16px rgba(155,168,255,0.8),
+        0 0 12px rgba(255,255,255,1) inset;
+}
+
+
+#card1, #card2, #card3 {
+    background: rgba(255, 255, 255, 0.12); /* более стеклянно */
+    border-radius: 26px;
+    padding: 28px;
+
+    /* Стеклянная обводка */
+    border: 1.6px solid rgba(20, 40, 90, 0.55);
+
+    /* Эффект инея (внутреннее свечение) */
+    box-shadow:
+        inset 0 0 25px rgba(255, 255, 255, 0.25),
+        inset 0 0 40px rgba(255, 255, 255, 0.12),
+
+        /* Объёмная внешняя тень */
+        0 18px 45px rgba(0, 0, 0, 0.28),
+        0 4px 12px rgba(0, 0, 0, 0.18);
+
+    /* Лёгкий градиент для глубины */
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(255,255,255,0.18),
+        stop:1 rgba(220,230,255,0.10)
+    );
+}
+
+#frameUp, #frameUp_3, #frameUp_5, #frameUp_14 {
+    background: rgba(10, 25, 80, 0.55);   /* тёмно‑синий + прозрачность */
+    border-radius: 18px;                  /* мягкие скругления */
+    border: 1px solid rgba(255,255,255,0.15); /* лёгкая светлая обводка */
+    backdrop-filter: blur(12px);          /* эффект стекла */
+}
+
+#frameUp_2 {
+    background: rgba(255, 255, 255, 0.55); /* более плотное стекло */
+    border-radius: 32px;
+
+    /* мягкий стеклянный градиент */
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(255,255,255,0.55),
+        stop:1 rgba(240,248,255,0.45)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    padding: 45px;
+
+    /* современная тень */
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.25),
+        0 0 40px rgba(255,255,255,0.15) inset;
+
+}
+#card1 QLabel, #card2 QLabel, #card3 QLabel {
+    color: #1E1F2E;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#iconLabel1, #iconLabel2, #iconLabel3, #iconLabel3_1 {
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#iconLabel1, #iconLabel3_1 { background-image: url("icon1.png"); }
+#iconLabel2 { background-image: url("icon2.png"); }
+#iconLabel3 { background-image: url("icon3.png"); }
+
+
+
+/* === SCROLLAREA — прозрачная === */
+QScrollArea {
+    background: transparent;
+    border: none;
+}
+
+QScrollArea > QWidget,
+QScrollArea > QWidget > QWidget,
+#scrollAreaWidgetContents {
+    background: transparent;
+}
+
+
+/* === ГЛАВНАЯ КАРТОЧКА (основная панель) === */
+#frameMainCard {
+background: rgba(10, 25, 80, 0.55);   /* тёмно‑синий + прозрачность */
+    border-radius: 18px;                  /* мягкие скругления */
+    border: 1px solid rgba(255,255,255,0.15); /* лёгкая светлая обводка */
+    backdrop-filter: blur(12px);
+}
+
+
+/* === COMBOBOX === */
+#comboLanguage {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #bfe2ff,
+        stop:1 #8ec9ff
+    );
+    color: #1E2A36;
+    border-radius: 10px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* popup */
+#comboLanguage QListView {
+    background: #e8f6ff;
+    color: #1E2A36;
+    border-radius: 8px;
+}
+
+#comboLanguage QListView::item:hover {
+    background-color: #cfe9ff;
+}
+
+#comboLanguage QListView::item:selected {
+    background-color: #8ec9ff;
+    color: #1E2A36;
+}
+
+
+
+#comboTranslate {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #bfe2ff,
+        stop:1 #8ec9ff
+    );
+    color: #1E2A36;
+    border-radius: 10px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* popup */
+#comboTranslate QListView {
+    background: #e8f6ff;
+    color: #1E2A36;
+    border-radius: 8px;
+}
+
+#comboTranslate QListView::item:hover {
+    background-color: #cfe9ff;
+}
+
+#comboTranslate QListView::item:selected {
+    background-color: #8ec9ff;
+    color: #1E2A36;
+}
+
+
+/* === TEXTEDIT === */
+#textRecognized {
+    background: rgba(255,255,255,0.65);
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #1E2A36;
+    font-size: 18px;
+}
+
+
+/* === ЛОГО === */
+#logoFrame {
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    min-width: 150px;
+    min-height: 150px;
+
+    border-radius: 75px;
+    background-color: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.45);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25),
+        0 0 25px rgba(255,255,255,0.25) inset;
+}
+
+
+/* === ДИАЛОГИ === */
+QDialog {
+    background: rgba(255, 255, 255, 0.85);
+    color: #1E2A36;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.45);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+
+/* === ПОЛЯ ВВОДА === */
+QTextEdit, QLineEdit {
+    color: #1E2A36;
+    background: rgba(255,255,255,0.75);
+    border-radius: 10px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+
+/* === СТЕКЛЯННАЯ ПАНЕЛЬ === */
+#glassPanel, #glassPanel_2, #glassPanel_3 {
+    background: rgba(255,255,255,0.45);
+    border-radius: 26px;
+    border: 1px solid rgba(255,255,255,0.55);
+    padding: 40px;
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.35),
+        0 0 40px rgba(255,255,255,0.25) inset;
+}
+
+
+/* === КНОПКИ === */
+QPushButton {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #AFCBFF,
+        stop:0.5 #8EC9FF,
+        stop:1 #9BA8FF
+    );
+    color: #1E1F2E;
+    border-radius: 16px;
+    padding: 14px 26px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+QPushButton:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #C7D6FF,
+        stop:1 #A78BFA
+    );
+}
+
+
+QPushButton:pressed {
+    background: #7C5CFF;
+    transform: scale(0.97);
+}
+
+
+#tipCard0, #tipCard1, #tipCard2, #tipCard3, #tipCard1_4, #tipCard2_7, #tipCard2_8, #tipCard3_4 {
+    /* Светлый голубой фон */
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #d0e8ff,
+        stop:1 #bfe0ff
+    );
+
+    border-radius: 26px;
+    padding: 22px;
+
+    /* Голубая рамка */
+    border: 2px solid #6bb8ff;
+
+    /* МНОГОСЛОЙНОЕ СВЕЧЕНИЕ — настоящий ореол */
+    box-shadow:
+        0 0 12px rgba(80, 150, 255, 0.9),   /* яркое синее свечение */
+        0 0 22px rgba(80, 150, 255, 0.7),   /* расширенный ореол */
+        0 0 38px rgba(80, 150, 255, 0.55),  /* мягкое сияние */
+        0 0 55px rgba(80, 150, 255, 0.35),  /* дальнее рассеянное свечение */
+        inset 0 0 18px rgba(255, 255, 255, 0.55), /* внутренний объём */
+        0 10px 25px rgba(0, 60, 120, 0.25);       /* тень снизу */
+
+    transition: all 0.25s ease;
+}
+
+#tipCard0:hover, #tipCard1:hover, #tipCard2:hover, #tipCard3, #tipCard1_4, #tipCard2_7, #tipCard2_8, #tipCard3_4:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #e4f3ff,
+        stop:1 #d2ecff
+    );
+
+    border-color: #8acaff;
+
+    transform: translateY(-4px);
+
+    /* Усиленное свечение при наведении */
+    box-shadow:
+        0 0 18px rgba(100, 170, 255, 1.0),
+        0 0 32px rgba(100, 170, 255, 0.85),
+        0 0 48px rgba(100, 170, 255, 0.65),
+        0 0 70px rgba(100, 170, 255, 0.45),
+        inset 0 0 22px rgba(255, 255, 255, 0.65),
+        0 14px 32px rgba(0, 80, 150, 0.35);
+}
+
+/* === ТЕКСТ === */
+QLabel {
+    color: #1E2A36;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#title {
+    color: #1E2A36;
+    font-size: 44px;
+    font-weight: 800;
+}
+
+#subtitle, #subtitle_2, #subtitle_3, #subtitle_4 {
+    color: #3A4A5A;
+    font-size: 22px;
+}

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>ofont.ru_Buira.ttf</file>
+        <file>ofont.ru_Arteks.ttf</file>
+        <file>ofont.ru_Oprah.ttf</file>
+    </qresource>
+    <qresource prefix="/load">
+        <file>loading.gif</file>
+    </qresource>
+    <qresource prefix="/logo">
+        <file alias="icon.png">build/Desktop_Qt_6_11_0_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/icon.png</file>
+    </qresource>
+</RCC>
